@@ -2,10 +2,14 @@ package org.p99.scala
 
 object P00 {
   def main(args: Array[String]): Unit = {
-    print("P01"); assert(P01.last(List(1, 1, 2, 3, 5, 8)) == 8)
-    print("/P02"); assert(P02.penultimate(List(1, 1, 2, 3, 5, 8)) == 5)
-    print("/P03"); assert(P03.nth(2, List(1, 1, 2, 3, 5, 8)) == 2)
-    print("/P04"); assert(P04.length(List(1, 1, 2, 3, 5, 8)) == 6)
+    val l = List(1, 1, 2, 3, 5, 8)
+    print("P01"); assert(P01.last(l) == 8)
+    print("/P02"); assert(P02.penultimate(l) == 5)
+    print("/P03"); assert(P03.nth(2, l) == 2)
+    print("/P04"); assert(P04.length(l) == 6)
+    print("/P05"); assert(P05.reverse(P05.reverse(l)) == l)
+    print("/P06"); assert(P06.isPalindrome("racecar".toList))
+    print("/P07"); assert(P07.flatten(List(List(1, 1), 2, List(3, List(5, 8)))) == l)
     println()
   }
 }
