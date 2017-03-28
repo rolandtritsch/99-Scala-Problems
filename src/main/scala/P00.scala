@@ -5,6 +5,7 @@ object P00 {
     print("P01"); assert(P01.last(List(1, 1, 2, 3, 5, 8)) == 8)
     print("/P02"); assert(P02.penultimate(List(1, 1, 2, 3, 5, 8)) == 5)
     print("/P03"); assert(P03.nth(2, List(1, 1, 2, 3, 5, 8)) == 2)
+    print("/P04"); assert(P04.length(List(1, 1, 2, 3, 5, 8)) == 6)
     println()
   }
 }
