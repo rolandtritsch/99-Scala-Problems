@@ -9,7 +9,7 @@ object P26 {
     * well-known binomial coefficient). For pure mathematicians, this result may
     * be great. But we want to really generate all the possibilities.
     *
-    * Algorithm goes like this:
+    * Algorithm (for combination2) goes like this:
     *
     * - (Recursively) Build a/the list of all combinations List(List(0, 0),
     * (0, 1), (1, 0), (1, 1), ...)
@@ -21,7 +21,22 @@ object P26 {
     * @param l the list of elements to choose from
     * @return the list of combinations
     */
-  def combinations[T <% Ordered[T]](k: Int, l: List[T]): List[List[T]] = {
+
+  def combinations(k: Int, l: List[_]) : List[List[_]] = {
+    //require(k >= 0 && k <= l.size)
+    //require(!l.isEmpty || k == 0)
+
+    l match {
+      case Nil => Nil
+      case head :: xs => {
+        if (k == 0) Nil
+        else if (k == 1) l.map(List(_))
+        else combinations(k - 1, xs).map(head :: _) ::: combinations(k, xs)
+      }
+    }
+  }
+
+  def combinations2[T <% Ordered[T]](k: Int, l: List[T]): List[List[T]] = {
     require(k >= 0 && k <= l.size)
     require(!l.isEmpty || k == 0)
 
@@ -30,7 +45,7 @@ object P26 {
     else {
       val all = for {
         e <- l
-        c <- combinations(k - 1, l)
+        c <- combinations2(k - 1, l)
         if (!c.contains(e))
       } yield (List(e) ::: c).sorted
       all.distinct

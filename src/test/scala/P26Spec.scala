@@ -8,6 +8,7 @@ class P26Spec extends FlatSpec {
   "combinations(k, List(...))" should "return all combinations of k elements" in {
     assert(combinations(3, (0 to 11).toList).size === 220)
     assert(combinations(2, (0 to 1).toList) === List(List(0, 1)))
+    assert(combinations(3, (0 to 11).toList) === combinations2(3, (0 to 11).toList))
   }
 
   it should "return the empty list, if given an empty list" in {
