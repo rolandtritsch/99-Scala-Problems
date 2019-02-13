@@ -1,5 +1,11 @@
-**/.DS_Store
 **/target/
 **/project/project/
-**/.idea/
 
+**/.idea/
+**/.vscode/
+
+.ensime
+.ensime_cache/
+
+ensime-langserver.log
+pc.stdout.log
