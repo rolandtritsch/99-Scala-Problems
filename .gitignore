@@ -3,9 +3,4 @@
 
 **/.idea/
 **/.vscode/
-
-.ensime
-.ensime_cache/
-
-ensime-langserver.log
-pc.stdout.log
+**/.metals/

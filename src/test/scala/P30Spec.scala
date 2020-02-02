@@ -16,8 +16,7 @@ class P30Spec extends FlatSpec {
 
   "lsortFreq(..)" should "return the sorted list, for a given list of lists" in {
     val l = List(List('a, 'b, 'c), List('d, 'e), List('f, 'g, 'h), List('d, 'e), List('i, 'j, 'k, 'l), List('m, 'n), List('o))
-    val result = List(List('i, 'j, 'k, 'l), List('o), List('a, 'b, 'c), List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n))
+    val result = List(List('o), List('i, 'j, 'k, 'l), List('a, 'b, 'c), List('f, 'g, 'h), List('d, 'e), List('d, 'e), List('m, 'n))
     assert(lsortFreq(l) === result)
   }
 }
-
